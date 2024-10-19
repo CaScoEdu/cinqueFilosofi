@@ -31,11 +31,12 @@ public class Filosofo implements Runnable {
 
         SINISTRA.prendi();
         /*
-         * con un ritardo di alcuni secondi, è probabile che tutti i filosofi riescano 
-         * a prendere la forchetta sinistra
+         * con un ritardo di max un secondo, è probabile che qualche filosofo
+         * riesca a prendere anche la forchetta destra evitando lo stallo
+         * o ritardandolo
          */
         System.out.println("Filosofo " + ID + " ha preso la forchetta sinistra " + SINISTRA.getID());
-        Thread.sleep((long) (Math.random() * 10000));
+        Thread.sleep((long) (Math.random() * 1000));
 
         DESTRA.prendi();
         System.out.println("Filosofo " + ID + " ha preso la forchetta destra " + DESTRA.getID());
