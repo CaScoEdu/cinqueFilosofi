@@ -36,7 +36,7 @@ public class Filosofo implements Runnable {
          * o ritardandolo
          */
         System.out.println("Filosofo " + ID + " ha preso la forchetta sinistra " + SINISTRA.getID());
-        Thread.sleep((long) (Math.random() * 1000));
+        Thread.sleep((long) (Math.random() * 10000));
 
         DESTRA.prendi();
         System.out.println("Filosofo " + ID + " ha preso la forchetta destra " + DESTRA.getID());
