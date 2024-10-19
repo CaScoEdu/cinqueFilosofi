@@ -31,12 +31,11 @@ public class Filosofo implements Runnable {
 
         SINISTRA.prendi();
         /*
-         * con un ritardo di max un secondo, è probabile che qualche filosofo
-         * riesca a prendere anche la forchetta destra evitando lo stallo
-         * o ritardandolo
+         * questo ritardo è ininfluente perchè
+         * il deadlock è evitato perchè si è evitata un'attesa circolare
          */
         System.out.println("Filosofo " + ID + " ha preso la forchetta sinistra " + SINISTRA.getID());
-        Thread.sleep((long) (Math.random() * 10000));
+        Thread.sleep((long) (Math.random() * 1000));
 
         DESTRA.prendi();
         System.out.println("Filosofo " + ID + " ha preso la forchetta destra " + DESTRA.getID());

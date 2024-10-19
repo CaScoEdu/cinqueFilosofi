@@ -14,15 +14,14 @@ public class Main {
             final Forchetta SINISTRA = FORCHETTE[i];
             final Forchetta DESTRA = FORCHETTE[(i + 1) % NUM_FILOSOFI];
 
-            FILOSOFI[i] = new Filosofo(i, DESTRA, SINISTRA);
             // Evitare il deadlock: per l'ultimo filosofo invertiamo l'ordine delle forchette
-            /* 
+            
             if (i == NUM_FILOSOFI - 1) {
-                filosofi[i] = new Filosofo(i, destra, sinistra);
+                FILOSOFI[i] = new Filosofo(i, DESTRA, SINISTRA);
             } else {
-                filosofi[i] = new Filosofo(i, sinistra, destra);
+                FILOSOFI[i] = new Filosofo(i, SINISTRA, DESTRA);
             }
-            */
+            
 
             new Thread(FILOSOFI[i]).start();
         }
